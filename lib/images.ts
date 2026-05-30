@@ -13,8 +13,7 @@ export const IMG = {
   cyclists: USE_LOCAL ? "/images/cyclists.png" : px("wm-cyclists-pan", 2000, 1200),
   watches: USE_LOCAL ? "/images/watches.png" : px("wm-watches-display", 1200, 1400),
   productHero: USE_LOCAL ? "/images/wrist.png" : px("wm-product-hero", 1100, 1100),
-  // No founder portrait supplied yet — placeholder until /images/founder.jpg exists.
-  founder: px("wm-founder-portrait", 1000, 1250),
+  founder: USE_LOCAL ? "/images/founder.jpg" : px("wm-founder-portrait", 1000, 1250),
 } as const;
 
 // Per-colourway product shots (watch wrapped in the band, on white).
