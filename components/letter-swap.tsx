@@ -129,7 +129,7 @@ export function LetterSwap({ word, images, alts = [] }: LetterSwapProps) {
           </span>
           <span
             data-card
-            className="pointer-events-none absolute left-1/2 top-1/2 aspect-[3/4] w-[clamp(84px,10vw,140px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl opacity-0 will-change-transform"
+            className="pointer-events-none absolute left-1/2 top-1/2 aspect-[3/4] w-[clamp(84px,10vw,140px)] overflow-hidden rounded-xl opacity-0 will-change-transform"
           >
             <Image
               src={images[i % images.length]}
