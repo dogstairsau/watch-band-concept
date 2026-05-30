@@ -339,7 +339,7 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="mx-auto max-w-[1400px] border-t border-paper/10 px-5 py-16 md:px-10 md:py-20">
+        <div className="mx-auto max-w-[1400px] px-5 pb-16 md:px-10 md:pb-20">
           <Reveal>
             <figure className="grid items-end gap-8 md:grid-cols-[1.4fr_1fr]">
               <blockquote className="text-2xl leading-snug text-paper md:text-3xl">
