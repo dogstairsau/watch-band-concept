@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* WATCH-MINDER — monochrome system. Imagery carries the only colour.
+   Sections alternate between ink (near-black) and paper (warm off-white).
+   Muted text and hairlines are expressed as opacity on the current tone. */
+:root {
+  --ink: #100f0d; /* warm near-black */
+  --paper: #f4f2ec; /* warm off-white */
+  --accent: #d9603b; /* single restrained burnt orange — primary action only */
+  --accent-fg: #100f0d; /* ink text on accent (contrast) */
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+/* Visible keyboard focus across all interactive elements */
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Prevent orphan/widow words: balance headings, keep paragraphs tidy */
+h1, h2, h3, .display {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* Condensed uppercase display utility — inherits current tone */
+.display {
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.92;
+  font-weight: 700;
+}
+
+/* Tracked caps label — inherits current tone (solid, per references) */
+.eyebrow {
+  font-family: var(--font-display), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
