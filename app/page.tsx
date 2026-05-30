@@ -36,10 +36,24 @@ export default function HomePage() {
     <>
       {/* HERO — climber header, "For those who live" + interactive MOTION */}
       <section className="relative flex min-h-[100dvh] items-center overflow-hidden bg-ink">
+        {/* Mobile: subtle climbing video (no GSAP interaction on touch) */}
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-left md:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={IMG.climber}
+          aria-hidden
+        >
+          <source src="/videos/hero-mobile.mp4" type="video/mp4" />
+        </video>
+        {/* Desktop: parallax still + interactive MOTION letters */}
         <ParallaxImage
           src={IMG.climber}
           alt="A climber on an overhang high above an open valley"
-          className="absolute inset-0"
+          className="absolute inset-0 hidden md:block"
           sizes="100vw"
           priority
         />
