@@ -3,6 +3,7 @@ import { Archivo, Archivo_Narrow } from "next/font/google";
 import "./globals.css";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { ConceptLock } from "@/components/concept-lock";
 
 const archivo = Archivo({
   variable: "--font-body",
@@ -43,6 +44,7 @@ export default function RootLayout({
       className={`${archivo.variable} ${archivoNarrow.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-ink text-paper font-body">
+        <ConceptLock />
         <SiteNav />
         <main className="flex-1">{children}</main>
         <SiteFooter />
