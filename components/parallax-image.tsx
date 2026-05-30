@@ -11,6 +11,8 @@ type ParallaxImageProps = {
   sizes?: string;
   priority?: boolean;
   range?: number; // parallax travel in %
+  objectPosition?: string; // crop focus, e.g. "50% 30%"
+  zoom?: number; // base scale for the parallax (lower = less crop)
 };
 
 export function ParallaxImage({
@@ -20,6 +22,8 @@ export function ParallaxImage({
   sizes = "100vw",
   priority = false,
   range = 7,
+  objectPosition = "center",
+  zoom = 1.18,
 }: ParallaxImageProps) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
@@ -34,7 +38,7 @@ export function ParallaxImage({
     <div ref={ref} className={`overflow-hidden ${className}`}>
       <motion.div
         className="absolute inset-0"
-        style={reduce ? { scale: 1 } : { y, scale: 1.18 }}
+        style={reduce ? { scale: 1 } : { y, scale: zoom }}
       >
         <Image
           src={src}
@@ -42,6 +46,7 @@ export function ParallaxImage({
           fill
           priority={priority}
           sizes={sizes}
+          style={{ objectPosition }}
           className="object-cover"
         />
       </motion.div>

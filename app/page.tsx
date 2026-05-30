@@ -317,8 +317,11 @@ export default function HomePage() {
           <ParallaxImage
             src={IMG.founder}
             alt="Dr Carl Le OAM, founder of WATCH-MINDER"
-            className="relative min-h-[55vh] rounded-2xl md:min-h-[600px]"
+            className="relative min-h-[48vh] rounded-2xl md:min-h-[520px]"
             sizes="(max-width: 768px) 100vw, 50vw"
+            objectPosition="50% 28%"
+            zoom={1.06}
+            range={4}
           />
         </div>
 
